@@ -1,22 +1,32 @@
 buildscript {
-  repositories {
-    mavenCentral()
-  }
+    repositories {
+        mavenCentral()
+    }
 
-  dependencies {
-    classpath 'com.android.tools.build:gradle:0.5.+'
-  }
+    dependencies {
+        classpath "com.android.tools.build:gradle:0.6.3"
+    }
 }
 
 allprojects {
-  group = 'net.simonvt.numberpicker'
-  version = '1.0.1'
+    group = 'net.simonvt.numberpicker'
+    version = '1.0.1'
 
-  repositories {
-    mavenCentral()
-  }
+    repositories {
+      mavenCentral()
+    }
 
-  tasks.withType(Compile) {
-    options.encoding = "UTF-8"
-  }
+    tasks.withType(Compile) {
+      options.encoding = "UTF-8"
+    }
+}
+
+ext {
+    theBuildToolsVersion = '19.0.0'
+    theSupportLibraryVersion = '19.0.0'
+    theCompileSdkVersion = 19
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.8'
 }

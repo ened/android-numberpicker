@@ -1,23 +1,13 @@
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-
-    dependencies {
-        classpath 'com.android.tools.build:gradle:0.5+'
-    }
-}
-
 apply plugin: 'android'
-
 
 dependencies {
     compile project(":library")
 }
 
 android {
-    buildToolsVersion "17.0"
-    compileSdkVersion 17
+    compileSdkVersion theCompileSdkVersion
+    buildToolsVersion "${theBuildToolsVersion}"
+		
      sourceSets {
         main {
             manifest.srcFile 'AndroidManifest.xml'
